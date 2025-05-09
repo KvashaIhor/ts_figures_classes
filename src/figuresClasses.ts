@@ -39,7 +39,7 @@ export class Triangle implements Figure {
     );
 
     if (Math.floor(area) !== area) {
-      return area.toFixed(2);
+      return Math.round(area * 100) / 100;
     }
 
     return area;
@@ -57,7 +57,7 @@ export class Circle implements Figure {
   ) {
     this.color = color;
 
-    if (radius < 0) {
+    if (radius <= 0) {
       throw new Error('Side lengths must be positive');
     }
   }
@@ -79,7 +79,7 @@ export class Rectangle implements Figure {
   ) {
     this.color = color;
 
-    if (width < 0 || height < 0) {
+    if (width <= 0 || height <= 0) {
       throw new Error('Side lengths must be positive');
     }
   }
